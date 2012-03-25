@@ -11,10 +11,14 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int colorbkgd=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int raindbowbutton=0x7f020002;
-        public static final int testnecklace=0x7f020003;
+        public static final int blue=0x7f020000;
+        public static final int cameraicon=0x7f020001;
+        public static final int cameraicon2=0x7f020002;
+        public static final int colorbkgd=0x7f020003;
+        public static final int colorbkgd2=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int raindbowbutton=0x7f020006;
+        public static final int testnecklace=0x7f020007;
     }
     public static final class id {
         public static final int buttonClick=0x7f050002;

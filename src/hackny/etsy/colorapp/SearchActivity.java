@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.http.AndroidHttpClient;
@@ -168,9 +169,13 @@ public class SearchActivity extends Activity {
 			//layout.addView(text);
 			layout.addView(image);
 			
-			
-			
 		}
+		
+	}
+	
+	public void onSearchAgainClicked(View view){
+		//Intent intent = new Intent(this, EtsyActivity.class);
+		//startActivity(intent);
 		
 	}
 

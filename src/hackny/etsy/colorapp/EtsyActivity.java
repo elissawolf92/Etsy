@@ -25,7 +25,7 @@ public class EtsyActivity extends Activity {
     }
     
     public void onTakePhotoClicked(View view){
-    	Intent intent = new Intent(this, Camera.class);
+    	Intent intent = new Intent(this, MyCamera.class);
     	startActivity(intent);
     
     }

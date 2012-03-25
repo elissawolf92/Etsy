@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Camera"
+            android:name=".MyCamera"
             />
         <activity
             android:name=".SearchActivity"
