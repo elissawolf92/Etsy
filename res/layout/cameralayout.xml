@@ -3,7 +3,7 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:id="@+id/layout">
 	<TextView android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="Camera"
+		android:layout_height="wrap_content" 
 		android:textSize="24sp" />
 
 	<FrameLayout android:id="@+id/preview"
@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSearchClicked"
+        android:layout_gravity="center"
             />
 
 </LinearLayout>

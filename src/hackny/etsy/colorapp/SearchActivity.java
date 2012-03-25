@@ -23,8 +23,10 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class SearchActivity extends Activity {
 	
@@ -41,18 +43,18 @@ public class SearchActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.searchlayout);
         System.out.println("stuff prints");
-//        Bundle bundle = this.getIntent().getExtras();
-//        int r = bundle.getInt("r");
-//        int g = bundle.getInt("g");
-//        int b = bundle.getInt("b");
-//        float[] hsv = new float[3];
-//        Color.RGBToHSV(r, g, b, hsv);
-//        h = Float.toString(hsv[0]);
-//        s = Float.toString(hsv[1]);
-//        v = Float.toString(hsv[2]);
-        int r = 0;
-        int g = 0;
-        int b = 0;
+        Bundle bundle = this.getIntent().getExtras();
+        int r = bundle.getInt("r");
+        int g = bundle.getInt("g");
+        int b = bundle.getInt("b");
+        float[] hsv = new float[3];
+        Color.RGBToHSV(r, g, b, hsv);
+        h = Float.toString(hsv[0]);
+        s = Float.toString(hsv[1]);
+        v = Float.toString(hsv[2]);
+//        int r = 0;
+//        int g = 0;
+//        int b = 0;
         client = new DefaultHttpClient();
         resultsNum = 0;
         color = "000000";
@@ -141,20 +143,32 @@ public class SearchActivity extends Activity {
 		//getSearchResults();
 		//resultsNum = 1;
 		LinearLayout layout = (LinearLayout) findViewById(R.id.searchlayout);
-		for (int i = 0; i < 2; i++){
+		for (int i = 0; i < 4; i++){
 			//get image from i entry of results array
 			System.out.println("in for loop");
 			JSONObject current = results.getJSONObject(i);
 			JSONObject mainImage = current.getJSONObject("MainImage");
 			String urlString = mainImage.getString("url_fullxfull");
+			//String name = current.getString("title");
+			//String price = current.getString("price");
 			URL url = new URL(urlString);
 		    InputStream content = (InputStream)url.getContent();
 		    Drawable d = Drawable.createFromStream(content , "src"); 
 			ImageView image = new ImageView(this);
-			Drawable picture = getResources().getDrawable(R.drawable.testnecklace);
+			//Drawable picture = getResources().getDrawable(R.drawable.testnecklace);
+			TextView text = new TextView(this);
+			//if (name != null && price != null);
+			//text.setText(name + ", " + price);
+			
+			View blank = new View(this);
+			blank.setMinimumHeight(50);
+			layout.addView(blank);
+			
 			image.setImageDrawable(d);
+			//layout.addView(text);
 			layout.addView(image);
-			System.out.println("image supposedly added");
+			
+			
 			
 		}
 		
